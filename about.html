@@ -36,25 +36,7 @@
 	</header>
 
 	<main>
-		<p>Home</p>
-		<canvas id="myCanvas" width="1000" height="1000"></canvas>
-		<script>
-			function clock(){
-				var dt = new Date();
-				var seconds = dt.getSeconds();
-				var minutes = dt.getMinutes();
-				var hours = dt.getHours();
-				var date = today.getDate();
-				var month = today.getMonth();
-				const canvas = document.getElementById('myCanvas');
-				const ctx = canvas.getContext('2d');
-				ctx.font = '20px serif';
-				ctx.fillStyle = "black";
-				ctx.fillText(("Current Time: " + hours + ":" + minutes + ":" + seconds), 325, 300);
-				ctx.fillText(("Current Date: " + month + "/" + date), 300, 200);
-				setTimeout(clock, 1000);
-			}	
-		</script>
+		<p>About</p>
 	</main>
 
 	<footer>
