@@ -21,6 +21,7 @@
 			 on ${new Date().toLocaleString("en-US")}</strong>`;
 		});
 	</script> -->
+	
 </head>
 
 <body>
@@ -35,26 +36,26 @@
 		</nav>
 	</header>
 
-	<main onload="clock()">
-		<div id="txt"></div>
+	<main>
 		<p>Home</p>
-		<canvas id="myCanvas" width="1000" height="1000"></canvas>
+		<canvas id="myCanvas" width="400" height="100"></canvas>
 		<script>
-			function clock(){
+			(function clock(){
 				var dt = new Date();
 				var seconds = dt.getSeconds();
 				var minutes = dt.getMinutes();
 				var hours = dt.getHours();
-				var date = today.getDate();
-				var month = today.getMonth();
-				const canvas = document.getElementById('myCanvas');
-				const ctx = canvas.getContext('2d');
-				ctx.font = '20px serif';
+				var date = dt.getDate();
+				var month = dt.getMonth();
+				const canvas = document.getElementById("myCanvas");
+				const ctx = canvas.getContext("2d");
+				ctx.clearRect(0, 0, 400, 100);
+				ctx.font = "20px serif";
 				ctx.fillStyle = "black";
-				ctx.fillText(("Current Time: " + hours + ":" + minutes + ":" + seconds), 325, 300);
-				ctx.fillText(("Current Date: " + month + "/" + date), 300, 200);
+				ctx.fillText("Current Time: " + hours + ":" + minutes + ":" + seconds, 0, 20);
+				ctx.fillText("Current Date: " + month + "/" + date, 0, 60);
 				setTimeout(clock, 1000);
-			}	
+			})();
 		</script>
 	</main>
 
@@ -62,6 +63,7 @@
 		<hr/>
 		<p>This page was made by Chieh-Hsiu Hung</p>
 	</footer>
+
 </body>
 
 </html>
