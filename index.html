@@ -27,6 +27,7 @@
 <body>
 	<header>
 		<img src="images/demo-logo.png" alt="Demo Portfolio Logo">
+		<!-- <img src="images/tech_ribbon.jpeg" alt="Tech Ribbon"> -->
 		<nav>
 			<a href="index.html">Home</a>
 			<a href="about.html">About</a>
@@ -37,31 +38,38 @@
 	</header>
 
 	<main>
-		<p>Home</p>
-		<canvas id="myCanvas" width="400" height="100"></canvas>
-		<script>
-			(function clock(){
-				var dt = new Date();
-				var seconds = dt.getSeconds();
-				var minutes = dt.getMinutes();
-				var hours = dt.getHours();
-				var date = dt.getDate();
-				var month = dt.getMonth();
-				const canvas = document.getElementById("myCanvas");
-				const ctx = canvas.getContext("2d");
-				ctx.clearRect(0, 0, 400, 100);
-				ctx.font = "20px serif";
-				ctx.fillStyle = "black";
-				ctx.fillText("Current Time: " + hours + ":" + minutes + ":" + seconds, 0, 20);
-				ctx.fillText("Current Date: " + month + "/" + date, 0, 60);
-				setTimeout(clock, 1000);
-			})();
-		</script>
+		<h1>Home</h1>
+		<h2><em>Hello World! This is Chieh-Hsiu Hung.</em></h2>
+		<section>
+			<h3>Dynamic Clock</h2>
+			<canvas id="myCanvas" width="400" height="100"></canvas>
+			<script>
+				(function clock(){
+					var dt = new Date();
+					var seconds = dt.getSeconds();
+					var minutes = dt.getMinutes();
+					var hours = dt.getHours();
+					var date = dt.getDate();
+					var month = dt.getMonth();
+					const canvas = document.getElementById("myCanvas");
+					const ctx = canvas.getContext("2d");
+					ctx.clearRect(0, 0, 400, 100);
+					ctx.font = "20px serif";
+					ctx.fillStyle = "black";
+					ctx.fillText("Current Time: " + hours + ":" + minutes + ":" + seconds, 0, 20);
+					ctx.fillText("Current Date: " + month + "/" + date, 0, 60);
+					setTimeout(clock, 1000);
+				})();
+			</script>
+			<img src="images/male-placeholder-image.jpeg" alt="profile_pic" width="400" height="400">
+		</section>
+		<p>The HTML <code>button</code> tag defines a clickable button.</p>
 	</main>
 
 	<footer>
 		<hr/>
-		<p>This page was made by Chieh-Hsiu Hung</p>
+		<div>This page was made by <i><b>Chieh-Hsiu Hung</b></i></div>
+		<aside>Last Edited on <strong>7/9/2022</strong></aside>
 	</footer>
 
 </body>
