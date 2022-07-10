@@ -25,7 +25,7 @@
 
 <body>
 	<header>
-		<img src="images/demo-logo.png" alt="Demo Portfolio Logo">
+		<img src="images/demo-logo.png" alt="Demo Portfolio Logo" width="300">
 		<nav>
 			<a href="index.html">Home</a>
 			<a href="about.html">About</a>
@@ -37,29 +37,53 @@
 
 	<main>
 		<h1>Contact</h1>
-		<h3>Please fill out the form below, I will get back to you as soon as possible</h3>
+		<h3>Please fill out the form below, I will reach back to you as soon as possible</h3>
 		<div class="contactform">
 			<form>
-				<label for="first_name">First Name</label>
-				<input type="text" id="first_name" placeholder="Please Enter First Name Here.">
-				<label for="last_name">Last Name</label>
-				<input type="text" id="last_name" placeholder="Please Enter Last Name Here.">
-				<br></br>
-				<label for="email">Email</label>
-				<input type="text" id="email" placeholder="Please Enter Email Here.">	
-				<br></br>
-				<label for="message">Message</label>
-				<br></br>
-				<textarea id="message" name="message" rows="4" cols="50"></textarea>
-				<br></br>
-				<label for="add_info">Additional Information</label>
-				<br></br>
-				<textarea id="add_info" name="add_info" rows="4" cols="50"></textarea>	
+				<fieldset>
+					<legend>Contact Form:</legend>
+					<label for="first_name">First Name</label>
+					<input type="text" id="first_name" placeholder="Please Enter First Name">
+					<label for="last_name">Last Name</label>
+					<input type="text" id="last_name" placeholder="Please Enter Last Name">
+					<br></br>
+					<label for="email">Email</label>
+					<input type="text" id="email" placeholder="Please Enter Email">
+					<br></br>
+					<label for="phone">Phone Number</label>
+					<input type="text" id="phone" placeholder="Please Enter Number">		
+					<br></br>
+					<label for="message">Message</label>
+					<br></br>
+					<textarea id="message" name="message" rows="4" cols="50"></textarea>
+					<br></br>
+					<label for="add_info">Additional Information</label>
+					<br></br>
+					<textarea id="add_info" name="add_info" rows="4" cols="50"></textarea>
+					<br></br>
+					<label for="preferred">Preferred Contact Method</label>
+					<select  name="contact_method" id="contact_method">
+						<optgroup label="Contact Method">
+						<option value="Call">Call</option>
+						<option value="Texting">Text</option>
+						<option value="mail">Email</option>
+						</optgroup>
+					</select>
+					<br />
+					<label for="time_preferred">Preferred time to be reached:</label>
+					<input list="times_preferred" name="time_preferred" id="time_preferred">
+					<datalist id="times_preferred">
+						<option value="9:00-12:00">
+						<option value="2:00-5:00">
+						<option value="7:00-9:00">
+						<option value="No preference">
+					</datalist>
+					<input type="submit">
+				</fieldset>
+				
 			</form>
 		</div>
-
 	</main>
-
 	<footer>
 		<hr/>
 		<p>This page was made by <i><b>Chieh-Hsiu Hung</b></i></p>
