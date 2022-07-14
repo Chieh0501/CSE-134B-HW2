@@ -1,31 +1,52 @@
 /* main.css */
 
 html,
+
+:root {
+  --vw-lg: 1920px;
+  --vw-md: 1366px;
+  --vw-sm: 600px;
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --accent-color-1: #CD7F32;
+  --accent-color-2: #969696;
+}
+
 body {
-  background-color: lightblue;
+  background-color: var(--secondary-color);
 }
 @font-face {
-  font-family: "Literata";
+  font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/Literata/static/Literata-Regular.ttf") format("truetype");
+  src: url("../fonts/Lato/Lato-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Literata";
+  font-family: "Lato";
   font-style: bold;
   font-weight: 400;
-  src: url("../fonts/Literata/static/Literata-Bold.ttf") format("truetype");
+  src: url("../fonts/Lato/Lato-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Literata";
+  font-family: "Lato";
   font-style: italic;
   font-weight: 400;
-  src: url("../fonts/Literata/static/Literata-Italic.ttf") format("truetype");
+  src: url("../fonts/Lato/Lato-Italic.ttf") format("truetype");
+}
+
+.grid main{
+  display: grid;
+
+}
+
+header, body{ 
+  background: url(../images/catalina.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 /****** header ******/
+
 header {
-  background-image: url("../images/bg_homepage.jpg");
   background-color: #fcfcdc;
   text-align: center;
   padding: 20px 0;
@@ -33,11 +54,46 @@ header {
   color: white;
 }
 
+#logo {
+  float: left;
+  height: 100px;
+}
+/******* NavBar *******/
+.navBar {
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+}
+.navBar > a{
+  float: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.navBar a:hover{
+  text-decoration: underline;
+}
+.navBar a:visited{
+  color: #000000; 
+}
+
 header hr {
   width: 30%;
 }
 
+@media screen and (max-width: 600px) {
+  .navBar a{
+    float: none;
+    display: block;
+  }
+}
 /****** main content ******/
+.title {
+  position: relative center center;
+  font-size: 6vw;
+}
 img{
   margin: 10px;
 }
@@ -60,11 +116,11 @@ ul li {
   margin: 5px;
 }
 
-a:link { color: #3366BB; }
+/* a:link { color: #3366BB; }
 a:visited { color: #663366 }
 a:visited:hover { color: #0b0080; }
 a:hover { color: gray; }
-a:active { background-color: yellow; border: 4px solid red;}
+a:active { background-color: yellow; border: 4px solid red;} */
 
 
 /****** footer ******/
