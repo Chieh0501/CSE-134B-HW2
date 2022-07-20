@@ -10,12 +10,11 @@
 	<title>Personal Prototype Website</title>
 	<link href="images/favicons/favicon.ico" rel="icon" />
 	<style>
-		* {border: 1px solid black;}
 		table, th, td {
 			border: 1px solid black;
 		}
 	</style>
-	<!-- <link href="styles/main.css" rel="stylesheet" /> -->
+	<link href="styles/main.css" rel="stylesheet" />
 	<!-- <script>
 		window.addEventListener('load', function () {
 			let time = window.performance.timing,
@@ -28,8 +27,8 @@
 
 <body>
 	<header>
-		<img src="images/demo-logo.png" alt="Demo Portfolio Logo">
-		<nav>
+		<img id="logo" src="images/demo-logo.png" alt="Demo Portfolio Logo">
+		<nav class="navBar">
 			<a href="index.html">Home</a>
 			<a href="about.html">About</a>
 			<a href="project.html">Project</a>
@@ -37,18 +36,61 @@
 			<a href="misc.html">Miscellaneous</a>
 			<a href="contact.html">Contact</a>
 		</nav>
+		<nav id="sidebar">
+			<div id="hamburger">
+				<input type="checkbox"/>
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="project.html">Project</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="misc.html">Miscellaneous</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>		
+			</div>
+		</nav>
 	</header>
 
-	<main>
-		<h1>Resume</h1>
-		<h2>Notable Courses Taken</h2>
-		<ul>
-			<li>CSE 176e</li>
-			<li>ECE 148</li>
-			<li>ECE 111</li>
-			<li>CSE 141L</li>
+	<main class="main2">
+		<h1 id="resume">Resume</h1>
+		<h2 id="courses_taken">Notable Courses Taken</h2>
+		<ul class="courses">
+			<li>
+				<details>
+					<summary>Robot Systems Design and Implementation</summary>
+					<p>CSE 176e: <br />End-to-end system design of embedded electronic systems including PCB design and fabrication, software control system development, and system integration.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Introduction to Autonomous Vehicles</summary>
+					<p>ECE 148: <br />This course introduces students to the fundamentals of autonomous vehicles using an accelerated and engaging engineering curriculum leveraging the educational benefits of robotics “coopertition” (cooperative competition). Students work in small teams building scale cars utilizing best engineering practices. Skills to be learned include fast prototyping, project management, traditional programming, and computer vision using Robot Operating System (ROS) and artificial intelligence deep learning.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Advanced Digital Design Project</summary>
+					<p>ECE 111: <br />Advanced topics in digital circuits and systems. Use of computers and design automation tools. Hazard elimination, synchronous/asynchronous FSM synthesis, synchronization and arbitration, pipelining and timing issues. Problem sets and design exercises. A large-scale design project. Simulation and/or rapid prototyping.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Project in Computer Architecture</summary>
+					<p>CSE 141L: <br />Hands-on computer architecture project aiming to familiarize students with instruction set architecture, and design of process. Control and memory systems.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Digital Systems Laboratory</summary>
+					<p>CSE 140L: <br />Implementation with computer-aided design tools for combinational logic minimization and state machine synthesis. Hardware construction of a small digital system.</p>
+				</details>
+			</li>
+			<p>Information taken from: <cite>catalog.ucsd.edu</cite></p>
 		</ul>
-		<table>
+		<table class="skill_table">
 			<caption><b>Programming Skills</b></caption>
 			<colgroup>
 				<col span="1" style="background-color:cyan">

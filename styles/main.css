@@ -13,7 +13,10 @@ html,
 }
 
 body {
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color-2);
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 @font-face {
   font-family: "Lato";
@@ -33,33 +36,38 @@ body {
   font-weight: 400;
   src: url("../fonts/Lato/Lato-Italic.ttf") format("truetype");
 }
-
-.grid main{
-  display: grid;
-
-}
-
 header, body{ 
   background: url(../images/catalina.jpg) no-repeat center center fixed;
   background-size: cover;
+}
+#sidebar{ 
+  background: url(../images/catalina.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+.grid main{
+  display: grid;
 }
 
 /****** header ******/
 
 header {
-  background-color: #fcfcdc;
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:1rem;
+  background-color: var(--secondary-color);
   text-align: center;
   padding: 20px 0;
-  font-family: "Literata", serif;
+  font-family: "Lato", bold;
   color: white;
 }
 
 #logo {
   float: left;
-  height: 100px;
+  height: 3vw;
 }
 /******* NavBar *******/
 .navBar {
+  grid-column: 2 / span 4;
   position: relative;
   overflow: hidden;
   margin-top: 50px;
@@ -83,22 +91,114 @@ header hr {
   width: 30%;
 }
 
-@media screen and (max-width: 600px) {
-  .navBar a{
-    float: none;
-    display: block;
-  }
+/****** hamburger menu ****/
+
+#hamburger{
+  display: block;
+  grid-column: 6;
+  position: relative;
+  z-index: 1;
+  user-select: none;
 }
-/****** main content ******/
-.title {
-  position: relative center center;
-  font-size: 6vw;
+#hamburger a{
+  color: var(--primary-color);
+  text-decoration: none;
+  font-style: bold;
 }
-img{
-  margin: 10px;
+#hamburger a:hover{
+  color: var(--accent-color-1);
 }
 
+#hamburger input{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position:absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#hamburger span{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  grid-column: 6;
+  left: 125px;
+  background: var(--accent-color-2);
+  border-radius: 4px;
+  
+  z-index: 1;
+  
+  transform-origin: 29px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+}
+
+#hamburger span:first-child{
+  transform-origin: 0% 0%;
+}
+#hamburger span:nth-last-child(1){
+  transform-origin: 0% 100%;
+}
+#hamburger input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(3px, -1px);
+}
+#hamburger input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: scale(0,1, 0,1);
+}
+#hamburger input:checked ~ span:nth-last-child(2)
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(1px, -2px);
+}
+#menu
+{
+  display:none;
+  list-style-type: none;
+  float:right;
+  background: url(../images/catalina.jpg) no-repeat center center fixed;
+  background-size: cover;
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  z-index: 3;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#hamburger input:checked ~ ul
+{
+  display:block;
+  transform: none;
+}
+#hamburger{
+  display:none;
+}
+#menu{
+  display:none;
+}
+#hamburger input{
+  display:none;
+}
+
+ol { list-style: upper-roman; display: inner; }
+/****** main content ******/
+
 main {
+  display:grid;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   text-align: center;
 }
 
@@ -109,13 +209,215 @@ ul {
   margin: 0 auto;
   padding: 20px;
   text-align: left;
-  width: 200px;
+  width: 100 vw;
 }
 
 ul li {
   margin: 5px;
 }
 
+.short_title{
+  display:none;
+}
+.title {
+  float:initial;
+  grid-row: 2 / span 3;
+  grid-column: 2 / span 4;
+  z-index: 1;
+  font-size: 6vw;
+}
+.contactform{
+  position: relative;
+  grid-row: 2 / span 6;
+  background-color: var(--secondary-color);
+  margin-left: 2vw;
+  grid-column: 1 / span 2;
+  height: auto;
+}
+.contactform label{
+  position: relative;
+  font-style: bold;
+}
+.contactform input[type = text], select, textarea{
+  width: 100%;
+  padding: 6px;
+  grid-column: 1 / span 6;
+  border: 1px solid var(--accent-color-1);
+  border-radius: 6px;
+  resize: vertical;
+}
+/***** Miscellaneous *****/
+main.main2{
+  display:grid;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  text-align: center;
+}
+.title2{
+  height: 1vw;
+  grid-row: 1;
+  grid-column: 2 / span 2;
+}
+section.miscellaneous{
+  grid-row: 1;
+  grid-column: 1;
+}
+#contact_frame{
+  align-self: end;
+  grid-row: 1;
+  grid-column: 3 / span 2;
+}
+#clock{
+  grid-row: 1;
+  grid-column: 1;
+}
+#randomPic{
+  grid-row: 1;
+  grid-column: 1 / span 6;
+}
+#courses_taken{
+  grid-row: 2;
+  grid-column: 2;
+}
+#resume{
+  grid-row:1;
+  grid-column: 1;
+}
+.courses{
+  grid-row:3;
+  grid-column: 2;
+}
+.skill_table{
+  grid-row: 3;
+  grid-column: 3;
+}
+section#quad_project{
+  width: auto;
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+section#bit_project{
+  grid-row: 3;
+  grid-column: 1 / span 4;
+}
+section#booths_project{
+  align-self: left;
+  grid-row: 4 / span 3;
+  grid-column: 1 / span 4;
+}
+h1.project{
+  align-self: center;
+  grid-row: 1;
+  grid-column: 2 / span 4;
+  font-size: 8vw;
+}
+
+/******* about main ******/
+main#about{
+  display:grid;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  text-align: center;
+}
+section#diving{
+  grid-row: 1;
+  grid-column: 1;
+}
+section#sailing{
+  grid-row: 2;
+  grid-column: 1;
+}
+section#snowboarding{
+  grid-row: 2;
+  grid-column: 2;
+}
+/***** Button *******/
+.button{
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  padding: 1vw 2vw;
+  text-align: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  background-color: var(--accent-color-1);
+  border-radius: 8px;
+  outline: none;
+}
+.button:hover{
+  text-decoration: underline;
+  color:azure;
+  background-color: #969696;
+}
+#Contact_Button{
+  grid-row: 5;
+  grid-column: 3;
+}
+#download_resume{
+  grid-row: 5;
+  grid-column: 4;
+}
+
+
+@media screen and (max-width: 600px) {
+  .navBar a{
+    float: none;
+    display: none;
+  }
+  #logo {
+    height: 10vw;
+  }
+  .title{
+    display:none;
+  }
+  .short_title{
+    display: block;  
+    grid-row: 1 / span 3;
+    grid-column: 2 / span 4;
+    font-size: 6vw;
+  }
+  #hamburger{
+    display: block;
+  }
+  #hamburger input{
+    display: block;
+  }
+  .contactform{
+    grid-column: 1/ span 6;
+  }
+  #notice{
+    display: none;
+  }
+  .button{
+    width: 60vw;
+    height: 20vw;
+  }
+  #Contact_Button{
+    grid-row: 3 / span 2;
+    grid-column: 2 / span 6;
+  }
+  #download_resume{
+    grid-row: 6 / span 2;
+    grid-column: 2 / span 6;
+  }
+  
+}
+@media screen and (max-width: 1000px) {
+  #logo {
+    height: 8vw;
+  }
+  .contactform{
+    grid-column: 1/ span 6;
+  }
+  #notice{
+    display: none;
+    font-variant:small-caps
+  }
+}
 /* a:link { color: #3366BB; }
 a:visited { color: #663366 }
 a:visited:hover { color: #0b0080; }
