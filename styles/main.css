@@ -190,7 +190,7 @@ header hr {
   display:none;
 }
 
-ol { list-style: upper-roman; display: inner; }
+ol { list-style: upper-roman; display: inline-block;}
 /****** main content ******/
 
 main {
@@ -252,7 +252,7 @@ main.main2{
   margin-left: 1vw;
   margin-right: 1vw;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: repeat(2, 1fr);
   text-align: center;
 }
 .title2{
@@ -260,22 +260,21 @@ main.main2{
   grid-row: 1;
   grid-column: 2 / span 2;
 }
-section.miscellaneous{
-  grid-row: 1;
-  grid-column: 1;
-}
 #contact_frame{
-  align-self: end;
-  grid-row: 1;
-  grid-column: 3 / span 2;
+  align-self: center;
+  width: 100%;
+  margin-left: 1vw;
+  grid-row: 1 / span 2;
+  grid-column: 3;
 }
 #clock{
   grid-row: 1;
   grid-column: 1;
 }
 #randomPic{
-  grid-row: 1;
-  grid-column: 1 / span 6;
+  align-self: start;
+  grid-row: 2;
+  grid-column: 1;
 }
 #courses_taken{
   grid-row: 2;
@@ -315,7 +314,7 @@ h1.project{
 }
 
 /******* about main ******/
-main#about{
+main#about_main{
   display:grid;
   margin-left: 1vw;
   margin-right: 1vw;
@@ -333,6 +332,10 @@ section#sailing{
 }
 section#snowboarding{
   grid-row: 2;
+  grid-column: 2;
+}
+section#songs{
+  grid-row:1;
   grid-column: 2;
 }
 /***** Button *******/
@@ -363,14 +366,26 @@ section#snowboarding{
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px){
+  main.main2{
+    display:grid;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    text-align: center;
+  }
+  #contact_frame{
+    width: 100%;
+    margin-left: 1vw;
+    grid-column: 1;
+    grid-row: 3;
+  }
   .navBar a{
     float: none;
     display: none;
   }
-  #logo {
-    height: 10vw;
-  }
+  
   .title{
     display:none;
   }
@@ -380,6 +395,9 @@ section#snowboarding{
     grid-column: 2 / span 4;
     font-size: 6vw;
   }
+  img{
+    width: 80vw;
+  }
   #hamburger{
     display: block;
   }
@@ -387,7 +405,7 @@ section#snowboarding{
     display: block;
   }
   .contactform{
-    grid-column: 1/ span 6;
+    grid-column: 1;
   }
   #notice{
     display: none;
@@ -404,18 +422,87 @@ section#snowboarding{
     grid-row: 6 / span 2;
     grid-column: 2 / span 6;
   }
-  
+  img#logo {
+    width: 40vw;
+    height: 16vw;
+  }
 }
-@media screen and (max-width: 1000px) {
-  #logo {
-    height: 8vw;
+@media screen and (max-width: 1366px) {
+  main{
+    display:grid;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    text-align: center;
+  }
+  main.main2{
+    display:grid;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    text-align: center;
+  }
+  main.about_main{
+    display:grid;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    text-align: center;
+  }
+  section#diving{
+    grid-row: 1;
+    grid-column: 1;
+  }
+  section#sailing{
+    grid-row: 2;
+    grid-column: 1;
+  }
+  video{
+    width: 80vw;
+  }
+  img{
+    width: 80vw;
+  }
+  section#snowboarding{
+    grid-row: 3;
+    grid-column: 1;
+  }
+  section#songs{
+    grid-row:4;
+    grid-column: 1;
   }
   .contactform{
     grid-column: 1/ span 6;
   }
   #notice{
     display: none;
-    font-variant:small-caps
+    font-variant:small-caps;
+  }
+  #contact_frame{
+    margin-left: 1vw;
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .title2{
+    width: 30vw;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+  #clock{
+    grid-column: 1;
+    grid-row: 1;
+  }
+  h1.project{
+    align-self: center;
+    grid-row: 1;
+    grid-column: 1;
+  }
+  img#logo {
+    width: 20vw;
+    height: 8vw;
   }
 }
 /* a:link { color: #3366BB; }
