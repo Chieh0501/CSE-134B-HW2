@@ -10,9 +10,9 @@
 	<title>Personal Prototype Website</title>
 	<link href="images/favicons/favicon.ico" rel="icon" />
 	<style>
-		* {border: 1px solid black;}
+
 	</style>
-	<!-- <link href="styles/main.css" rel="stylesheet" /> -->
+	<link href="styles/main.css" rel="stylesheet" />
 	<!-- <script>
 		window.addEventListener('load', function () {
 			let time = window.performance.timing,
@@ -25,32 +25,51 @@
 
 <body>
 	<header>
-		<img src="images/demo-logo.png" alt="Demo Portfolio Logo">
-		<nav>
+		<img id="logo" src="images/demo-logo.png" alt="Demo Portfolio Logo" title="Personal Logo">
+		<nav class="navBar">
 			<a href="index.html">Home</a>
 			<a href="about.html">About</a>
 			<a href="project.html">Project</a>
 			<a href="resume.html">Resume</a>
+			<a href="misc.html">Miscellaneous</a>
 			<a href="contact.html">Contact</a>
+		</nav>
+		<nav id="sidebar">
+			<div id="hamburger">
+				<input type="checkbox"/>
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="project.html">Project</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="misc.html">Miscellaneous</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>		
+			</div>
 		</nav>
 	</header>
 
 	<main>
-		<h1>Project</h1>
+		<h1 class="project">Project</h1>
+		<section id="quad_project">
+			<h2>Quadcopter Development</h2>
+			<img id="quad" src="images/quadcopter.jpg" alt="Quadcopter main board" title="Quadcopter motherboard">
+		</section>
+		<section id="bit_project">
+			<h2>Develop a bitcoin hashing function</h2>
+			<img id="hash" src="images/hash-waveform.png" alt="Hashing Waveform" title="Hashing Waveform">
+		</section>
+		<section  id="booths_project">
+			<h2>Create a machine that executes Booth's Multiplication algorithm</h2>
+			<img id="booth" src="images/booth.png" alt="Booth's Multiplicatior Diagram" title="Booth's Multiplicatior Diagram">
+		</section>
 	</main>
-	<section>
-		<h2>Building a quadcopter</h2>
-		<p>Using libraries such as <code>library1</code> and <code>library2</code> to transmit the radio wave and program the quadcopter</p>
-	</section>
-	<section>
-		<h2>Develop a bitcoin hashing function</h2>
-	</section>
-	<section>
-		<h2>Create a machine that executes Booth's Multiplication algorithm</h2>
-	</section>
 	<footer>
-		<p>This page was made by <i><b>Chieh-Hsiu Hung</b></i></p>
-		<p>Last Edited on <strong>7/9/2022</strong></p>
+		<p>This page was made by <i><strong>Chieh-Hsiu Hung</strong></i></p>
+		<p>Last Edited on <b>7/20/2022</b></p>
 	</footer>
 </body>
 

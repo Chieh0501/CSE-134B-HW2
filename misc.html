@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Prototype Personal Portfolio" />
+	<meta name="keywords" content="HTML, CSS, JavaScript" />
+	<meta name="author" content="Chieh-Hsiu Hung" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Personal Prototype Website</title>
+	<link href="images/favicons/favicon.ico" rel="icon" />
+	<style>
+		/* * {border: 1px solid black;} */
+	</style>
+	<link href="styles/main.css" rel="stylesheet" />
+	
+</head>
+
+<body>
+	<header>
+		<img id="logo" src="images/demo-logo.png" alt="Demo Portfolio Logo">
+		<nav class="navBar">
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="project.html">Project</a>
+			<a href="resume.html">Resume</a>
+			<a href="misc.html">Miscellaneous</a>
+			<a href="contact.html">Contact</a>
+		</nav>
+		<nav id="sidebar">
+			<div id="hamburger">
+				<input type="checkbox"/>
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="project.html">Project</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="misc.html">Miscellaneous</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>		
+			</div>
+		</nav>
+	</header>
+	<audio autoplay="autoplay">
+		<source src="videos/background.mp3" type="audio/mp3">
+	</audio>
+
+	<main class="main2">
+			<div id="clock">
+				<h2>Dynamic Clock</h2>
+				<svg width="120" height="120">
+					<circle cx="60" cy="60" r="50" stroke="black" stroke-width="5" fill="blue" />
+				</svg>
+				<details>
+					<summary>Clock</summary>
+					<p>This is planned to be a clock but is not yet implemented due to restrictions</p>
+				</details>
+				<canvas id="myCanvas" width="400" height="100"></canvas>
+				<script>
+					(function clock(){
+						var dt = new Date();
+						var seconds = dt.getSeconds();
+						var minutes = dt.getMinutes();
+						var hours = dt.getHours();
+						var date = dt.getDate();
+						var month = dt.getMonth();
+						const canvas = document.getElementById("myCanvas");
+						const ctx = canvas.getContext("2d");
+						ctx.clearRect(0, 0, 400, 100);
+						ctx.font = "20px serif";
+						ctx.fillStyle = "black";
+						ctx.fillText("Current Time: " + hours + ":" + minutes + ":" + seconds, 0, 20);
+						ctx.fillText("Current Date: " + month + "/" + date, 0, 60);
+						setTimeout(clock, 1000);
+					})();
+				</script>
+			</div>
+			<picture id="randomPic">
+				<source media="(min-width:800px)" srcset="images/650-413.png">
+				<img src="images/male-placeholder-image_30.jpeg" alt="profile_pic" style="width:auto;">
+			</picture>
+			<section id="contact_frame">
+				<h2>Contact me</h2>
+				<iframe src="contact.html" height="400" width="600" title="Contact Form"></iframe>
+			</section>	
+	</main>
+	<footer>
+		<hr/>
+		<div>This page was made by <i><b>Chieh-Hsiu Hung</b></i></div>
+		<aside>Last Edited on <strong>7/9/2022</strong></aside>
+	</footer>
+</body>
+
+</html>

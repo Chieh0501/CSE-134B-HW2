@@ -10,9 +10,9 @@
 	<title>Personal Prototype Website</title>
 	<link href="images/favicons/favicon.ico" rel="icon" />
 	<style>
-		* {border: 1px solid black;}
+
 	</style>
-	<!-- <link href="styles/main.css" rel="stylesheet" /> -->
+	<link href="styles/main.css" rel="stylesheet" />
 	<!-- <script>
 		window.addEventListener('load', function () {
 			let time = window.performance.timing,
@@ -25,20 +25,35 @@
 
 <body>
 	<header>
-		<img src="images/demo-logo.png" alt="Demo Portfolio Logo">
-		<nav>
+		<img id="logo" src="images/demo-logo.png" alt="Demo Portfolio Logo">
+		<nav class="navBar">
 			<a href="index.html">Home</a>
 			<a href="about.html">About</a>
 			<a href="project.html">Project</a>
 			<a href="resume.html">Resume</a>
+			<a href="misc.html">Miscellaneous</a>
 			<a href="contact.html">Contact</a>
+		</nav>
+		<nav id="sidebar">
+			<div id="hamburger">
+				<input type="checkbox"/>
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="project.html">Project</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="misc.html">Miscellaneous</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>		
+			</div>
 		</nav>
 	</header>
 
-	<main>
-		<h1>About</h1>
-		<hr>
-		<section>
+	<main id="about_main">
+		<section id="diving">
 			<h2>Hobbies</h2>
 			<h3>Diving</h3>
 			<pre>
@@ -60,17 +75,21 @@
                                               - .  `  .   \  \ `. 	
 
 			</pre>
+		</section>
+		<section id="sailing">
 			<h3>Sailing</h3>
-			<video width="640" height="360" controls>
+			<video id="sailing_vid" width="640" height="360" controls>
 				<source src="videos/sailing.mp4" type="video/mp4">
 			</video>
+		</section>
+		<section id="snowboarding">
 			<h3>Snowboarding</h3>
 			<figure>
 				<img src="images/snowboard.jpg" alt="snowboard" width="400">
 				<figcaption>Snowboarding trip at Mammoth with a few of my friends.</figcaption>
-			  </figure>
+			</figure>
 		</section>
-		<section>
+		<section id="songs">
 			<h2>List of my favorite songs</h2>
 			<ol>
 				<li><i>She Say</i></li>
@@ -80,8 +99,6 @@
 				<li><i>高嶺の花子さん</i></li>
 			</ol>
 		</section>
-		
-		
 	</main>
 
 	<footer>

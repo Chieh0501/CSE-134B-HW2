@@ -10,9 +10,9 @@
 	<title>Personal Prototype Website</title>
 	<link href="images/favicons/favicon.ico" rel="icon" />
 	<style>
-		* {border: 1px solid black;}
+
 	</style>
-	<!-- <link href="styles/main.css" rel="stylesheet" /> -->
+	<link href="styles/main.css" rel="stylesheet" />
 	<!-- <script>
 		window.addEventListener('load', function () {
 			let time = window.performance.timing,
@@ -25,19 +25,36 @@
 
 <body>
 	<header>
-		<img src="images/demo-logo.png" alt="Demo Portfolio Logo" width="300">
-		<nav>
+		<img id="logo" src="images/demo-logo.png" alt="Demo Portfolio Logo">
+		<nav class="navBar">
 			<a href="index.html">Home</a>
 			<a href="about.html">About</a>
 			<a href="project.html">Project</a>
 			<a href="resume.html">Resume</a>
+			<a href="misc.html">Miscellaneous</a>
 			<a href="contact.html">Contact</a>
+		</nav>
+		<nav id="sidebar">
+			<div id="hamburger">
+				<input type="checkbox"/>
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="project.html">Project</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="misc.html">Miscellaneous</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>		
+			</div>
 		</nav>
 	</header>
 
 	<main>
 		<h1>Contact</h1>
-		<h3>Please fill out the form below, I will reach back to you as soon as possible</h3>
+		<h3 id="notice">Please fill out the form below, I will reach back to you as soon as possible</h3>
 		<div class="contactform">
 			<form>
 				<fieldset>
