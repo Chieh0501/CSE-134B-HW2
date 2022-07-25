@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dialogs</title>
+</head>
+<body>
+    <h1>Custom Dialogs!</h1>
+    <button id="Alert">Alert</button>
+    <button id="Confirm">Confirm</button>
+    <button id="Prompt">Prompt</button>
+    <button id="Safer_Prompt">Safer_Prompt</button>
+    <hr />
+    <output id="User_result"></output>
+    <dialog id="dialogBox"></dialog>
+    <script type="module">
+        import * as custom from './customdialog.js';
+
+        let dialog_box = document.getElementById('User_result');
+        let alert_btn = document.getElementById('Alert');
+        alert_btn.addEventListener('click', custom.Alert);
+
+        let confirm_btn = document.getElementById('Confirm');
+        confirm_btn.addEventListener('click', custom.Confirm);
+
+        let prompt_btn = document.getElementById('Prompt');
+        prompt_btn.addEventListener('click', custom.Prompt);
+
+        let safe_prompt_btn = document.getElementById('Safer_Prompt');
+        safe_prompt_btn.addEventListener('click', custom.Sprompt);
+    </script>
+</body>
+</html>

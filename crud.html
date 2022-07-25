@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="DOMPurify/dist/purify.min.js"></script>
+    <title>Blog CRUD</title>
+    <script type="module">
+        import * as blog from './blog.js';
+
+        let add_btn = document.getElementById('add_post');
+        let delete_all = document.getElementById('delete_all');
+        let save_btn = document.getElementById('save_btn');
+        let cancel_btn = document.getElementById('cancel_btn');
+
+        add_btn.addEventListener('click', blog.showDialog);
+        save_btn.addEventListener('click', blog.add);
+        cancel_btn.addEventListener('click', blog.cancel);
+        delete_all.addEventListener('click', blog.deleteAll);
+
+        document.addEventListener("DOMContentLoaded", () =>{
+            const blogsContainer = document.getElementById("blogs");
+            blog.renderAllBlogs(blogsContainer);
+        });
+    </script>
+    <template id="blog-template">
+        <blog-post>
+            <blog-title>
+                <h1>Title</h1>
+                <h3>Date</h3>
+            </blog-title>
+            <blog-summary>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </blog-summary>
+            <p id="edit">Edit</p>
+            <p id="delete">Delete</p>
+        </blog-post>
+    </template>
+</head>
+<body>
+    <header>Blog Posts</header>
+    <main>
+        <section id="blogs"></section>
+    </main>
+    
+    <button id="add_post">Add Post</button>
+    <button id="delete_all">Delete All Post</button>
+    <dialog id="User_result">
+        <form>
+            <fieldset>
+                <label for="title">Post Title:</label>
+                <input type="text" id="title" placeholder="Please Enter blog title">
+                <label for="date">Post Date:</label>
+                <input type="text" id="date" placeholder="Please Enter date posted">
+                <br></br>
+                <label for="summary">Short Summary:</label>
+                <br></br>
+                <textarea id="summary" name="summary" rows="3" cols="50"></textarea>
+            </fieldset>
+            <button type="button" id="cancel_btn">Cancel</button>
+            <button type="button" id="save_btn">Save</button>
+        </form>
+    </dialog>
+    <dialog id="Edit_result">
+        <form>
+            <fieldset>
+                <label for="title2">Post Title:</label>
+                <input type="text" id="title2" placeholder="Please Enter blog title">
+                <label for="date2">Post Date:</label>
+                <input type="text" id="date2" placeholder="Please Enter date posted">
+                <br></br>
+                <label for="summary2">Short Summary:</label>
+                <br></br>
+                <textarea id="summary2" name="summary2" rows="3" cols="50"></textarea>
+            </fieldset>
+            <button type="button" id="cancel_btn2" data-id="">Cancel</button>
+            <button type="button" id="save_btn2" data-id="">Save</button>
+        </form>
+    </dialog>
+</body>
+</html>

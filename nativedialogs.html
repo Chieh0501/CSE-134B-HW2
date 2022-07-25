@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script type="text/javascript" src="DOMPurify/dist/purify.min.js"></script>
+    <title>Native Dialogs</title>
 </head>
 <body>
-    
+    <h1>Simple Dialogs!</h1>
+    <button id="Alert">Alert</button>
+    <button id="Confirm">Confirm</button>
+    <button id="Prompt">Prompt</button>
+    <button id="Safer_Prompt">Safer_Prompt</button>
+    <hr />
+    <output id="User_result"></output>
+    <script>
+        // function Alert(){
+        //     alert('This is an Alert');
+        // }
+        function Confirm(){
+            let user_response = confirm("Did you confirm this?");
+            document.getElementById('User_result').innerHTML = `User Entered: ${user_response}!`;
+        }
+        function Prompt(){
+            let user_response = prompt("Please Enter Something.");
+            if(user_response){
+                document.getElementById('User_result').innerHTML = `User Entered: ${user_response}!`;
+            } else {
+                document.getElementById('User_result').innerHTML = 'User Entered: Nothing!';
+            }
+        }
+        Sprompt = () => {
+            let user_response = DOMPurify.sanitize(prompt('This is a safer prompt'));     
+            if(user_response){
+                document.getElementById('User_result').innerHTML = `User Entered: ${user_response}`;
+            } else {
+                document.getElementById('User_result').innerHTML = 'User Entered: Nothing!';
+            }
+        }
+        let alert_btn = document.getElementById('Alert');
+        alert_btn.addEventListener('click', () => {alert('This is an Alert');});
+
+        let confirm_btn = document.getElementById('Confirm');
+        confirm_btn.addEventListener('click', Confirm);
+
+        let prompt_btn = document.getElementById('Prompt');
+        prompt_btn.addEventListener('click', Prompt);
+
+        let safe_prompt_btn = document.getElementById('Safer_Prompt');
+        safe_prompt_btn.addEventListener('click', Sprompt);
+    </script>
 </body>
 </html>
