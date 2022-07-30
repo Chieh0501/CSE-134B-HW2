@@ -422,8 +422,22 @@ section#songs{
   from {opacity: .4} 
   to {opacity: 1}
 }
-
-
+main#method_test{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+}
+#methodForm{
+  grid-row: 1;
+  grid-column: 1;
+}
+#response{
+  white-space: nowrap;
+  overflow-wrap: normal;
+  margin: 1vw 1vw;
+  grid-row: 1;
+  grid-column: 2 / span 3;
+}
 @media screen and (max-width: 800px){
   #index_main{
     display:grid;

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Prototype Personal Portfolio" />
+	<meta name="keywords" content="HTML, CSS, JavaScript" />
+	<meta name="author" content="Chieh-Hsiu Hung" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Personal Prototype Website</title>
+	<link href="images/favicons/favicon.ico" rel="icon" />
+	<style>
+		/* * {border: 1px solid black;} */
+	</style>
+	<link href="styles/main.css" rel="stylesheet" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H04HMFEL3M"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){window.dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'GA_MEASUREMENT_ID');
+	</script>
+</head>
+<body>
+    <header>
+		<img id="logo" src="images/demo-logo.png" alt="Demo Portfolio Logo">
+		<nav class="navBar">
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="project.html">Project</a>
+			<a href="resume.html">Resume</a>
+			<a href="misc.html">Miscellaneous</a>
+			<a href="contact.html">Contact</a>
+			<a href="methodtest.html">Methodtest</a>
+            <a href="webcomponent.html">Methodtest</a>
+		</nav>
+		<nav id="sidebar">
+			<div id="hamburger">
+				<input type="checkbox"/>
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="project.html">Project</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="misc.html">Miscellaneous</a></li>
+					<li><a href="contact.html">Contact</a></li>
+                    <li><a href="methodtest.html">Methodtest</a></li>
+                    <li><a href="webcomponent.html">Methodtest</a></li>
+				</ul>		
+			</div>
+		</nav>
+	</header>
+    <main id="method_test">
+        <section>
+            <form id="methodForm" style="background-color: beige;">
+                <legend>HTML Form:</legend>
+                <label for="id_number">ID</label>
+                <input type="text" name="id_number" id="id_number" placeholder="Please Enter Record ID">
+                <br></br>
+                <label for="article_name">Article Name</label>
+                <input type="text" name="article_name" id="article_name" placeholder="Please Enter Article Name">
+                <br></br>
+                <label for="message">Message</label>
+                <br></br>
+                <my-date name="date" id="date"></my-date>
+                <textarea id="message" name="message" rows="4" cols="40"></textarea>
+                <button type="button" id="post">postBtn</button>
+                <button type="button" id="get">getBtn</button>
+                <button type="button" id="put">putBtn</button>
+                <button type="button" id="delete">deleteBtn</button>
+            </form>
+        </section>
+        <output id="response">
+            <textarea name="text_area" id="text_area" height="auto" width="auto"></textarea>
+        </output>
+	</main> 
+    <script type="module">
+        import * as methods from './method.js';
+
+        let post_btn = document.getElementById('post');
+        let get_btn = document.getElementById('get');
+        let put_btn = document.getElementById('put');
+        let delete_btn = document.getElementById('delete');
+
+        post_btn.addEventListener('click', methods.post);
+        get_btn.addEventListener('click', methods.get);
+        put_btn.addEventListener('click', methods.put);
+        delete_btn.addEventListener('click', methods.delete_article);
+    </script>
+</body>
+</html>
